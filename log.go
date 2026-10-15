@@ -1,7 +1,10 @@
 package tcolorlog
 
-import "fmt"
+import (
+	"fmt"
+	"os"
+)
 
-func PrintError(message string) {
-	fmt.Println(Red + "ERROR" + Reset + " " + message)
+func PrintError(message string, a ...any) {
+	fmt.Fprintf(os.Stderr, Red + " ERROR " + Reset + " " + message, a...)
 }
