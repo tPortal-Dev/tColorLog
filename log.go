@@ -23,5 +23,5 @@ func PrintWarn(format string, args ...any) {
 }
 
 func PrintInfo(format string, args ...any) {
-	logf(os.Stdout, Cyan, "INFO", format, args...)
+	logf(os.Stdout, Blue, "INFO", format, args...)
 }
