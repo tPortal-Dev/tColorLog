@@ -2,17 +2,22 @@ package tcolorlog
 
 import (
 	"fmt"
+	"io"
 	"os"
 )
 
-func PrintError(message string, a ...any) {
-	fmt.Fprintf(os.Stderr, Red + " ERROR " + Reset + " " + message, a...)
+func logf(w io.Writer, color, label, format string, args ...any) {
+	fmt.Fprintf(w, color + " " + label + " " + Reset + " " + format, args...)
 }
 
-func PrintSuccess(message string, a ...any) {
-	fmt.Printf(Green + " SUCCESS " + Reset + " " + message, a...)
+func PrintError(format string, args ...any) {
+	logf(os.Stderr, Red, "ERROR", format, args...)
 }
 
-func PrintWarn(message string, a ...any) {
-	fmt.Printf(Yellow + " WARN " + Reset + " " + message, a...)
+func PrintSuccess(format string, args ...any) {
+	logf(os.Stdout, Green, "SUCCESS", format, args...)
+}
+
+func PrintWarn(format string, args ...any) {
+	logf(os.Stdout, Yellow, "WARN", format, args...)
 }
