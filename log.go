@@ -21,3 +21,7 @@ func PrintSuccess(format string, args ...any) {
 func PrintWarn(format string, args ...any) {
 	logf(os.Stdout, Yellow, "WARN", format, args...)
 }
+
+func PrintInfo(format string, args ...any) {
+	logf(os.Stdout, Cyan, "INFO", format, args...)
+}
