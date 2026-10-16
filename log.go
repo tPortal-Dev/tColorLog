@@ -7,21 +7,21 @@ import (
 )
 
 func logf(w io.Writer, color, label, format string, args ...any) {
-	fmt.Fprintf(w, color + " " + label + " " + Reset + " " + format, args...)
+	fmt.Fprintf(w, color + " " + label + " " + reset + " " + format, args...)
 }
 
 func PrintError(format string, args ...any) {
-	logf(os.Stderr, Red, "ERROR", format, args...)
+	logf(os.Stderr, red, "ERROR", format, args...)
 }
 
 func PrintSuccess(format string, args ...any) {
-	logf(os.Stdout, Green, "SUCCESS", format, args...)
+	logf(os.Stdout, green, "SUCCESS", format, args...)
 }
 
 func PrintWarn(format string, args ...any) {
-	logf(os.Stdout, Yellow, "WARN", format, args...)
+	logf(os.Stdout, yellow, "WARN", format, args...)
 }
 
 func PrintInfo(format string, args ...any) {
-	logf(os.Stdout, Blue, "INFO", format, args...)
+	logf(os.Stdout, blue, "INFO", format, args...)
 }
