@@ -11,3 +11,11 @@ go get github.com/tPortal-Dev/tColorLog
 ```
 
 ## Usage
+```go
+import (
+	tcl "github.com/tPortal-Dev/tColorLog"
+)
+```
+
+## License
+[MIT](LICENSE)
