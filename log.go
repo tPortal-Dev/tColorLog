@@ -7,7 +7,7 @@ import (
 )
 
 func logf(w io.Writer, color, label, format string, args ...any) {
-	fmt.Fprintf(w, color + " " + label + " " + reset + " " + format, args...)
+	fmt.Fprintf(w, color + " " + label + " " + reset + " " + format + "\n", args...)
 }
 
 func PrintError(format string, args ...any) {
